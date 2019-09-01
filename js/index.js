@@ -46,10 +46,23 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+// Create elements
+const help = document.createElement("a");
+const please = document.createElement("a");
+please.textContent = "Please";
+please.style.color = "green";
+help.textContent = "Help";
+help.style.color = "green";
+
 // Add navigation content
 const navigation = document.querySelectorAll("a");
+const nav = document.querySelector("nav");
+nav.appendChild(help);
+nav.prepend(please);
+
 for (let i = 0; i < navigation.length; i++) {
   navigation[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
+  navigation[i].style.color = "green";
 }
 
 // Add CTA Content
@@ -89,3 +102,7 @@ const contactParagraphs = document.querySelectorAll(".contact p");
 contactParagraphs[0].textContent = siteContent.contact.address;
 contactParagraphs[1].textContent = siteContent.contact.phone;
 contactParagraphs[2].textContent = siteContent.contact.email;
+
+// Add footer content
+const footerContent = document.querySelector("footer p");
+footerContent.textContent = siteContent.footer.copyright;
