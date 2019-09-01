@@ -51,3 +51,13 @@ const navigation = document.querySelectorAll("a");
 for (let i = 0; i < navigation.length; i++) {
   navigation[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
 }
+
+// Add CTA Content
+const ctaText = document.querySelector(".cta h1");
+ctaText.textContent = siteContent.cta.h1;
+
+const ctaButton = document.querySelector(".cta button");
+ctaButton.textContent = siteContent.cta.button;
+
+const ctaImage = document.querySelector(".cta img");
+ctaImage.setAttribute("src", siteContent.cta["img-src"]);
