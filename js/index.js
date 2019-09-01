@@ -80,3 +80,12 @@ mainParagraph[1].textContent = siteContent["main-content"]["about-content"];
 mainParagraph[2].textContent = siteContent["main-content"]["services-content"];
 mainParagraph[3].textContent = siteContent["main-content"]["product-content"];
 mainParagraph[4].textContent = siteContent["main-content"]["vision-content"];
+
+// Add contact content
+const contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent.contact["contact-h4"];
+
+const contactParagraphs = document.querySelectorAll(".contact p");
+contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[1].textContent = siteContent.contact.phone;
+contactParagraphs[2].textContent = siteContent.contact.email;
