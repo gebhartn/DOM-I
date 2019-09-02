@@ -67,7 +67,7 @@ for (let i = 0; i < navigation.length; i++) {
 
 // Add CTA Content
 const ctaText = document.querySelector(".cta h1");
-ctaText.textContent = siteContent.cta.h1;
+ctaText.textContent = siteContent["cta"]["h1"];
 
 const ctaButton = document.querySelector(".cta button");
 ctaButton.textContent = siteContent.cta.button;
@@ -99,7 +99,7 @@ const contactHeader = document.querySelector(".contact h4");
 contactHeader.textContent = siteContent.contact["contact-h4"];
 
 const contactParagraphs = document.querySelectorAll(".contact p");
-contactParagraphs[0].textContent = siteContent.contact.address;
+contactParagraphs[0].textContent = siteContent["contact"]["address"];
 contactParagraphs[1].textContent = siteContent.contact.phone;
 contactParagraphs[2].textContent = siteContent.contact.email;
 

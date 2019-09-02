@@ -38,6 +38,8 @@ myButtons[1].onclick = function() {
 // Start Timer function
 const startTimer = () => {
   myButtons[0].disabled = true;
+  myButtons[0].style.opacity = "0.6";
+  myButtons[0].style.cursor = "default";
   let ms = 0;
   // Set initial values to 0
   const countTime = setInterval(function() {
@@ -71,7 +73,7 @@ const startTimer = () => {
       msHundreds.textContent = ms.toString()[1];
       msTens.textContent = ms.toString()[2];
     }
-    // Round up one millisecond to prevent clock from displaying: 09:98, etc.
+    // Round up one millisecond to prevent clock from displaying: 09:99, etc.
     if (ms === 999) {
       tens.textContent = 1;
       ones.textContent = 0;
@@ -79,6 +81,8 @@ const startTimer = () => {
       msTens.textContent = 0;
       digits.forEach(x => (x.style.color = "red"));
       myButtons[0].disabled = false;
+      myButtons[0].style.opacity = "1";
+      myButtons[0].style.cursor = "pointer";
       clearInterval(countTime);
     }
     ms++;
