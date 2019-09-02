@@ -24,11 +24,11 @@ const myButtons = document.querySelectorAll("button");
 myButtons[0].onclick = function() {
   let digits = document.querySelectorAll(".digit");
   digits.forEach(x => (x.style.color = "black"));
-  myButtons[0].disabled = true;
   startTimer();
-  return setInterval(function() {
-    myButtons[0].disabled = false;
-  }, 10000);
+  // setInterval(function() {
+  //   console.log("hello");
+  //   myButtons[0].disabled = false;
+  // }, 10000);
 };
 
 // Reset button while not counting
@@ -41,6 +41,7 @@ myButtons[1].onclick = function() {
 
 // Start Timer function
 const startTimer = () => {
+  myButtons[0].disabled = true;
   let ms = 0;
   // Set initial values to 0
   const countTime = setInterval(function() {
@@ -54,8 +55,10 @@ const startTimer = () => {
       ones.textContent = "-";
       msTens.textContent = "-";
       msHundreds.textContent = "-";
+      digits.forEach(x => (x.style.color = "black"));
       clearInterval(countTime);
       myButtons[0].disabled = false;
+      return;
     };
     // Compare lengths of milliseconds to string to print number
     if (ms.toString().length === 1) {
@@ -79,6 +82,7 @@ const startTimer = () => {
       msHundreds.textContent = 0;
       msTens.textContent = 0;
       digits.forEach(x => (x.style.color = "red"));
+      myButtons[0].disabled = false;
       clearInterval(countTime);
     }
     ms++;
