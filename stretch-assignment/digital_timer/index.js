@@ -25,10 +25,6 @@ myButtons[0].onclick = function() {
   let digits = document.querySelectorAll(".digit");
   digits.forEach(x => (x.style.color = "black"));
   startTimer();
-  // setInterval(function() {
-  //   console.log("hello");
-  //   myButtons[0].disabled = false;
-  // }, 10000);
 };
 
 // Reset button while not counting
@@ -88,3 +84,15 @@ const startTimer = () => {
     ms++;
   }, 10);
 };
+
+myButtons.forEach(function(el) {
+  el.style.width = "100px";
+  el.style.height = "50px";
+  el.style.marginBottom = "10px";
+  el.style.color = "white";
+  el.style.background = "	#181818";
+  el.style.border = "none";
+  el.style.textTransform = "uppercase";
+  el.style.borderRadius = "15px";
+  el.style.cursor = "pointer";
+});
