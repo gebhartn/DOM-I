@@ -94,6 +94,15 @@ mainParagraph[2].textContent = siteContent["main-content"]["services-content"];
 mainParagraph[3].textContent = siteContent["main-content"]["product-content"];
 mainParagraph[4].textContent = siteContent["main-content"]["vision-content"];
 
+mainParagraph.forEach(x => {
+  x.onmouseover = function() {
+    x.style.color = "red";
+  };
+  x.onmouseout = function() {
+    x.style.color = "black";
+  };
+});
+
 // Add contact content
 const contactHeader = document.querySelector(".contact h4");
 contactHeader.textContent = siteContent.contact["contact-h4"];

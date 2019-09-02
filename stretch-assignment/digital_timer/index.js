@@ -56,6 +56,8 @@ const startTimer = () => {
       digits.forEach(x => (x.style.color = "black"));
       clearInterval(countTime);
       myButtons[0].disabled = false;
+      myButtons[0].style.opacity = "1";
+      myButtons[0].style.cursor = "pointer";
       return;
     };
     // Compare lengths of milliseconds to string to print number
